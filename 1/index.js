@@ -21,5 +21,16 @@ function readLocalTxt(path) {
 }
 
 readLocalTxt("./data.txt").then((res) => {
-  console.log(res);
+  let Y = 2020;
+  let rest = 0;
+
+  res.forEach((el, idx) => {
+    rest = Y - el;
+    let X = res.slice(idx);
+
+    if (X.includes(rest)) {
+      console.log(rest, el, rest * el);
+      return;
+    }
+  });
 });
